@@ -1,0 +1,59 @@
+XPATH
+
+$X('/') ### El slash selecciona todo el documento representa la raiz del documento  
+$X('/html')## Selecciona todo el documento html
+$X('//')## Ir por varios niveles de los nodos 
+$X('//h1')
+$X('//text()')
+
+$x('//h1/a/text()').map(x =>x.wholeText)
+
+
+PREDICADOS
+$x('/html/body/div/div[1]')
+[div.row.header-box]
+$x('/html/body/div/div[last()]')
+[div.row]
+$x('//span[@class="text"]/text()').map(x=>x.wholeText)
+
+
+OPERADORES
+
+$x('//span[@class!="text"]')
+$x('/html/body/div/div[position()>1]')
+[div.row]
+$x('//span[@class="text"and @class="tag-item"]')
+[]
+$x('//span[@class="text"or @class="tag-item"]')
+
+WILDCARDS
+
+$x('/HTML/*') ## El asterizco es un comodin que te dice traigame todo los nodos que esten inmediatamente despues del html
+$x('//*') Trae todos los nodos y todos los atributos de los nodos 
+$x('//span[@class="text"and @itemprop="text"]/node()')
+
+http://quotes.toscrape.com/
+
+
+SEARCH TEXT 
+
+$x('//small[@class ="author"and starts-with(.,"A")]/text()').map(x => x.wholeText)
+(4) ["Albert Einstein", "Albert Einstein", "Albert Einstein", "André Gide"]
+
+$x('//small[@class= "author" and contains(., "ro")]/text()').map(x => x.wholeText)
+["Marilyn Monroe"]
+
+$x('//small[@class= "author" and ends-with(., "t")]/text()').map(x => x.wholeText) ## Dan error en el google chrome pero no en python 
+$x('//small[@class= "author" and matches(., "A.*n")]/text()').map(x => x.wholeText)## Dan error en el google chrome pero no en python 
+
+
+XPATH AXES
+$x('/html/body/div/self::div')
+[div.container]
+$x('/html/body/div/child::div')
+(2) [div.row.header-box, div.row]
+$x('/html/body/div/descendant::div')
+(26) [div.row.header-box, div.col-md-8, div.col-md-4, div.row, div.col-md-8, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.col-md-4.tags-box]
+$x('/html/body/div/descendant-or-self::div')
+(27) [div.container, div.row.header-box, div.col-md-8, div.col-md-4, div.row, div.col-md-8, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.quote, div.tags, div.col-md-4.tags-box]
+
