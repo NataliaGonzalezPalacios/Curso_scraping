@@ -1,0 +1,60 @@
+EXPRESIONES
+
+/ 
+Nodo root expresan  tamnien relaciones entre nodos padres e hijos 
+.
+Representa al nodo actual 
+//
+Relaciona nodos con hijos o descendientes "se salta niveles"
+..
+Representa el nodo padre del nodo actual 
+@
+Selecciona atributos
+text()
+Devuelve el valor en texto de un nodo 
+
+
+PREDICADOS
+
+[n]
+Devulve el nodo con indice en nuestra n en nuestra lista de nodos 
+
+[last()]
+Devuelve el último nodo en nuestra lista de nodos 
+
+[@class]
+Devuelve los nodos que poseen el atributo class
+
+WILDCARDS
+
+* 
+Devuelve cualquier nodo 
+
+@*
+Devuelve cualquier atributo 
+
+node()
+Devuelve cualquier nodo y mas detalles 
+
+Axes
+
+self 
+Devuleve el nodo en el que estamos parados 
+ 
+Parent 
+Devuelve el nodo padre del actual 
+ 
+ancestor
+
+Devuelve el padre y los abuelos del nodo actual 
+
+ancestor -or- self 
+union ancestor y self 
+
+Child
+
+Devuelve los hijos directos del nodo actual 
+
+descendant
+
+Devuleve los hijos y los nietos del nodo actual
