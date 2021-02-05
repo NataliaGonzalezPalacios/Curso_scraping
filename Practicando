@@ -6,3 +6,13 @@ $x('//article[@class = "product_pod"]/h3/a/@title').map(x => x.value)
 
 
 $x('//article[@class = "product_pod"]/div[@calss="product_price"]/p[@class ="price_color"]/text()').map(x => x.wholeText)
+
+
+$x('//div[@class ="side_categories"]/ul[@class ="nav nav-list"]/li/ul/li/a/text()').map(x=> x.wholeText)
+
+
+Stock 
+
+$x('//div[@class = "product_price"]/p[@class = "instock availability"]/text()').map(x => x.wholeText)
+
+
