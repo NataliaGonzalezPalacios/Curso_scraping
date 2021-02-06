@@ -1,0 +1,12 @@
+git init ## Para crear el re´positorio 
+
+py -m venv venv ## Crear el ambiente virtual
+
+venv\Scripts\activate  ## Para activar el ambiente virtual 
+
+pip install requests lxml autopep8 ## Instalando librerias 
+
+Links = //div[@class = "news V_Title_Img"]/a/@href
+Titulo = //a[@class = "empresasSect"]/text()
+Resumen = //div[@class = "lead"]/p/text()
+Cuerpo = //div[@class = "html-content"]/p[not(@class)]/text()
